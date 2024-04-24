@@ -8,7 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
-  
+      fontFamily:{
+        custom: ["Poppins", "sans-serif"],
+      }
     },
   },
   plugins: [],
