@@ -31,20 +31,15 @@ model Products {
   discountPrice   Decimal
   discountPercent Int
   isNew           Boolean
-  imageLink       String   @db.Char
+  imageLink       String
   createdAt       DateTime @default(now())
   updatedAt       DateTime @updatedAt
-
-  // Define a relação com a categoria
-  category        Category @relation(fields: [categoryId], references: [id])
 }
 
 model Category {
   id          Int       @id @default(autoincrement())
   name        String
-  imageLink   String    @db.Char
+  imageLink   String    
   createdAt   DateTime  @default(now())
   updatedAt   DateTime  @updatedAt
-
-  products    Products[] 
 }
