@@ -1,8 +1,11 @@
 export type ProductType = {
     id:number;
-    title: string;
-    price:number|null;
+    name: string;
+    categoryId: number;
     description: string|null;
-    image: string;
-    category: string;
+    price:number;
+    discountPrice:number;
+    discountPercent:number;
+    isNew: boolean;
+    imageLink: string;
 }

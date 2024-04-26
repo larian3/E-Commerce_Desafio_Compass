@@ -2,7 +2,7 @@ import { ProductType } from "@/types/ProductType";
 import Product from "./components/Product";
 
 async function getProducts() {
-  const res = await fetch('https://fakestoreapi.com/products')
+  const res = await fetch('http://localhost:3000/api/products/')
   if(!res.ok){
     throw new Error("falha no carregamento de dados");
   }
@@ -15,8 +15,9 @@ export default async function Home() {
     <div className="max-w-7xl mx-auto pt-8 px-8 xl:px-0">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 xl:gap-6">
         {products.map((product:ProductType) => (
-          <Product key={products.id} product={product}></Product>
-
+          <Product 
+            key={products.id} product={product}>
+          </Product>
         ))}
       </div>
     </div>
