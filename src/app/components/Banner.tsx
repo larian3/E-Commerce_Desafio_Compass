@@ -1,118 +1,12 @@
-import { ArrowLeftOutlined, ArrowRightOutlined } from "@material-ui/icons";
-import { useState } from "react";
-import styled from "styled-components";
-import { sliderItems } from "../data";
-import { mobile } from "../responsive";
+import { useState } from 'react';
 
-const Container = styled.div`
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  position: relative;
-  overflow: hidden;
-  ${mobile({ display: "none" })}
-`;
-
-const Arrow = styled.div`
-  width: 50px;
-  height: 50px;
-  background-color: #fff7f7;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: ${(props) => props.direction === "left" && "10px"};
-  right: ${(props) => props.direction === "right" && "10px"};
-  margin: auto;
-  cursor: pointer;
-  opacity: 0.5;
-  z-index: 2;
-`;
-
-const Wrapper = styled.div`
-  height: 100%;
-  display: flex;
-  transition: all 1.5s ease;
-  transform: translateX(${(props) => props.slideIndex * -100}vw);
-`;
-
-const Slide = styled.div`
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  background-color: #${(props) => props.bg};
-`;
-
-const ImgContainer = styled.div`
-  height: 100%;
-  flex: 1;
-`;
-
-const Image = styled.img`
-  height: 80%;
-`;
-
-const InfoContainer = styled.div`
-  flex: 1;
-  padding: 50px;
-`;
-
-const Title = styled.h1`
-  font-size: 70px;
-`;
-
-const Desc = styled.p`
-  margin: 50px 0px;
-  font-size: 20px;
-  font-weight: 500;
-  letter-spacing: 3px;
-`;
-
-const Button = styled.button`
-  padding: 10px;
-  font-size: 20px;
-  background-color: transparent;
-  cursor: pointer;
-`;
-
-const Slider = () => {
-  const [slideIndex, setSlideIndex] = useState(0);
-  const handleClick = (direction) => {
-    if (direction === "left") {
-      setSlideIndex(slideIndex > 0 ? slideIndex - 1 : 2);
-    } else {
-      setSlideIndex(slideIndex < 2 ? slideIndex + 1 : 0);
-    }
-  };
-
+function Banner() {
   return (
-    <Container>
-      <Arrow direction="left" onClick={() => handleClick("left")}>
-        <ArrowLeftOutlined />
-      </Arrow>
-      <Wrapper slideIndex={slideIndex}>
-        {sliderItems.map((item) => (
-          <Slide bg={item.bg} key={item.id}>
-            <ImgContainer>
-              <Image src={item.img} />
-            </ImgContainer>
-            <InfoContainer>
-              <Title>{item.title}</Title>
-              <Desc>{item.desc}</Desc>
-              <Button>SHOW NOW</Button>
-            </InfoContainer>
-          </Slide>
-        ))}
-      </Wrapper>
-      <Arrow direction="right" onClick={() => handleClick("right")}>
-        <ArrowRightOutlined />
-      </Arrow>
-    </Container>
+    <div className="bg-gray-200 py-4 relative" style={{ width: '100%', height: '499.48px', overflow: 'hidden' }}>
+      <div className="container mx-auto flex items-center justify-center absolute inset-0" style={{ backgroundPosition: 'center', backgroundSize: 'cover', backgroundImage: 'url(https://s3-alpha-sig.figma.com/img/98fb/219f/a11f805aade2224f1d6658764a2395df?Expires=1714953600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=erZbpOunM6574fSoTt-MNFTN2uLIIjdDuHkF9rKnmGO3ZrGj7RS-JDFGjB2tqWWKJN3AbqQswLKdisyDuRAkguaTKoOo2FwqrceIRSSsaNlgJAqquiuQ6s45aTsQEVgPeaLrNjXNGDXbXsSpCOOBgbE649c4GSCTTdq558Ao0b9bEkUUosX1x2BxTsIoTQ961-vQKs7AFB1Wetk2i3H-6MQgpXY-5tlqpyOztE-EX-yXk7G32hy0hRzoRpsl5fVVaIT0yuHbt-2u3HNoN0qm~7jkpm9TUNHrJyaGhKrKiIC7O8fhe0vF0R5r1ER7BAsIMj0vZ1pPC2qa8xlq7p7~fQ__)' }}>
+      </div>
+    </div>
   );
-};
+}
 
-export default Slider;
+export default Banner;
