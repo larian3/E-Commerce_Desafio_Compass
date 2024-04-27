@@ -9,7 +9,7 @@ type ProductProps = {
 export default function Product({ product }: ProductProps) {
 
   return (
-    <div className="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl mx-auto mb-10">
+    <div className="font-custom max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl mx-auto mb-10">
       <div className="shadow-md bg-white overflow-hidden relative" style={{ width: '285px', height: '446px' }}>
         <div className="w-full h-full relative">
           <ProductImage product={product} />

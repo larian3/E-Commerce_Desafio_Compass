@@ -3,7 +3,7 @@ import { MagnifyingGlassIcon, HeartIcon, ShoppingCartIcon, UserIcon, UserPlusIco
 
 function Navbar() {
   return (
-    <nav className='fixed top-0 w-full bg-white text-black z-50'>
+    <nav className='fixed top-0 w-full bg-white text-black z-50 font-custom'>
       <div className="container mx-auto py-2 px-4 md:px-8">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-8">
