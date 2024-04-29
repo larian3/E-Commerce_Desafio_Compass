@@ -1,4 +1,3 @@
-import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import { MagnifyingGlassIcon, HeartIcon, ShoppingCartIcon, UserIcon, UserPlusIcon } from "@heroicons/react/24/outline"; 
 
 function Navbar() {
@@ -27,16 +26,11 @@ function Navbar() {
                 </a>
             </div>
             <div className="hidden md:flex items-center gap-2">
-              <SignedIn>
-                <UserButton/>
-              </SignedIn>
-              <SignedOut >
-                <SignInButton mode="modal">
-                  <button className="flex items-center hover:bg-blue-200 py-2 px-4 rounded-md">
-                    <UserPlusIcon className="h-6 w-6" />
-                  </button>
-                </SignInButton>
-              </SignedOut>
+              
+              <button className="flex items-center hover:bg-blue-200 py-2 px-4 rounded-md">
+                <UserPlusIcon className="h-6 w-6" />
+              </button>
+                
               <button className="flex items-center hover:bg-blue-200 py-2 px-4 rounded-md">
                   <MagnifyingGlassIcon className="h-6 w-6" />
               </button>

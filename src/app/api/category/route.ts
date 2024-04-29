@@ -1,10 +1,9 @@
-
-import { PrismaClient, Category} from '@prisma/client';
+import { PrismaClient, Category } from '@prisma/client';
 import { NextResponse, NextRequest } from 'next/server';
 
 const prisma = new PrismaClient();
 
-//CREATE
+// CREATE
 export async function POST(request: NextRequest) {
   try {
     const newCategory = await request.json();
@@ -16,22 +15,30 @@ export async function POST(request: NextRequest) {
       status: 201,
       statusText: 'Created',
     });
-  } catch (error: any) { // Definindo o tipo do erro como 'any'
-    console.error('Error creating product', error);
+  } catch (error: any) {
+    console.error('Error creating category', error);
     return new NextResponse(JSON.stringify({ error: error.message }), {
       status: 500,
       statusText: 'Internal Server Error',
     });
   }
+  
 }
 
+// READ
+export async function GET(_: NextRequest) {
+  try {
+    const categories: Category[] = await prisma.category.findMany();
 
-//READ
-export async function GET() {
-	const category: Category[] = await prisma.category.findMany();
-
-	return new NextResponse(JSON.stringify(category), {
-		status: 200,
-		statusText: 'OK',
-	});
+    return new NextResponse(JSON.stringify(categories), {
+      status: 200,
+      statusText: 'OK',
+    });
+  } catch (error) {
+    console.error('Error fetching categories', error);
+    return new NextResponse(JSON.stringify({ error: 'Internal Server Error' }), {
+      status: 500,
+      statusText: 'Internal Server Error',
+    });
+  }
 }
