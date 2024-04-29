@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# E-Commerce Compass
 
-## Getting Started
+Este é um projeto desenvolvido para o programa de bolsas da Compass.UOL, uma plataforma de e-commerce construída com Next.js, Prisma, PostgreSQL e Tailwind CSS.
 
-First, run the development server:
+## Visão Geral
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+O E-Commerce é uma aplicação web que permite aos usuários visualizar e comprar uma variedade de produtos. Ele foi desenvolvido como parte do programa de bolsas da Compass, com o objetivo de demonstrar habilidades em desenvolvimento web utilizando tecnologias modernas.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Tecnologias Utilizadas
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Next.js**: Um framework React para renderização do lado do servidor e construção de aplicativos da web rápidos e escaláveis.
+- **Prisma**: Uma ferramenta de banco de dados ORM (Object-Relational Mapping) para Node.js e TypeScript.
+- **PostgreSQL**: Um sistema de gerenciamento de banco de dados relacional de código aberto.
+- **Tailwind CSS**: Um framework CSS utilitário de baixo nível para criar designs personalizados de forma rápida e fácil.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Funcionalidades Principais
 
-## Learn More
+- **Visualização de Produtos**: Os usuários podem visualizar uma lista de produtos disponíveis no e-commerce, incluindo detalhes como nome, descrição, preço e imagem.
+- **Detalhes do Produto**: Cada produto possui uma página de detalhes dedicada, onde os usuários podem ver informações mais detalhadas, como opções de cores, tamanhos e adicionar ao carrinho.
+- **Administração de Produtos**: Recursos administrativos para gerenciar o catálogo de produtos, incluindo adição, edição e exclusão de itens.
 
-To learn more about Next.js, take a look at the following resources:
+## Backend API
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Foi criada uma API no backend para realizar as operações CRUD (Create, Read, Update, Delete) dos produtos. A API é responsável por fornecer e manipular os dados dos produtos, permitindo que a aplicação frontend os exiba e os gerencie de acordo com as necessidades do usuário.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Como Executar Localmente
 
-## Deploy on Vercel
+1. **Clone o Repositório**: Faça uma cópia do repositório para sua máquina local utilizando o seguinte comando:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+    ```
+    git clone https://github.com/larian3/E-Commerce-Desafio-Compass.git
+    ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+2. **Instale as Dependências**: Navegue até o diretório do projeto e instale as dependências usando npm ou yarn:
+
+    ```
+    cd e-commerce-compass
+    npm install
+    ```
+
+3. **Configure o Banco de Dados**: Certifique-se de ter uma instância do PostgreSQL em execução localmente ou configurada em um ambiente de desenvolvimento. Altere as credenciais do banco de dados no arquivo `.env` conforme necessário.
+
+4. **Execute as Migrações do Prisma**: Execute as migrações do Prisma para criar as tabelas do banco de dados:
+
+    ```
+    npx prisma migrate dev
+    ```
+
+5. **Inicie o Servidor de Desenvolvimento**: Inicie o servidor de desenvolvimento Next.js para iniciar a aplicação:
+
+    ```
+    npm run dev
+    ```
+
+6. **Acesse a Aplicação**: Acesse a aplicação em seu navegador web em `http://localhost:3000`.
+
+## Contribuindo
+
+Contribuições são bem-vindas! Sinta-se à vontade para abrir uma issue ou enviar um pull request com sugestões de melhorias, correções de bugs ou novos recursos.
+
