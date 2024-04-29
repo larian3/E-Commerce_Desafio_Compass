@@ -1,4 +1,5 @@
 export type ProductType = {
+    [x: string]: string | undefined;
     id:number;
     name: string;
     categoryId: number;

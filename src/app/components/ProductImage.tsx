@@ -5,7 +5,7 @@ import { useState } from "react";
 import Product from "./Product";
 
 type ProductImageProps = {
-    product: ProductType;
+    product: ProductType
 };
 
 export default function ProductImage({ product }: ProductImageProps) {

@@ -16,6 +16,7 @@ export default function CategoryImage({ category }: CategoryImageProps) {
             alt={category.name}
             width={400}
             height={300}
+            className="rounded-md"
         />
     )
 }

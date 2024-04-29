@@ -13,12 +13,12 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-  children,
+  children, pageType
 }: {
   children: React.ReactNode;
+  pageType: string;
 }) {
-  return (
-    
+  return (    
       <html lang="en">
         <head>
           <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -27,14 +27,14 @@ export default function RootLayout({
         </head>
         <body className={inter.className}>
           <Navbar />
-          <Banner />
+          <Banner /> 
           <main>
             {children}
           </main>
+          <Footer/>
         </body>
-        <footer>
-         <Footer/>
-        </footer>
+        
+         
         
       </html>
    

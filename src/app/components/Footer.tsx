@@ -2,7 +2,7 @@ import { CheckCircleIcon, ShieldCheckIcon, TruckIcon, PhoneArrowDownLeftIcon} fr
 
 function Footer() {
   return (
-    <footer className="py-12 font-custom relative">
+    <div className="py-12 font-custom relative text-xm">
       <div className="container mx-auto">
        {/* Parte superior do footer */}
        <div className="mx-auto grid grid-cols-1 md:grid-cols-4 mb-8 bg-[#FAF3EA] w-full" style={{ height: '270px', top: '2594px', padding: '100px 0' }}>
@@ -44,8 +44,9 @@ function Footer() {
           {/* Seção de links */}
           <div>
             <ul className="list-none pl-16">
-              <li><a href="#" className="font-bold text-xl">Funiro.</a></li>
-              <h1 className='text-gray-400 pb-7'>400 University Drive Suite 200 Coral Gables, FL 33134 USA</h1>
+              <li><a href="#" className="font-bold text-xl ">Funiro.</a></li>
+              <h1 className='text-gray-400 pt-20'>400 University Drive Suite 200 Coral Gables, FL 33134 USA</h1>
+              <h1 className="pt-16">2023 furino. All rights reverved</h1>
             </ul>
           </div>
           <div>
@@ -76,7 +77,7 @@ function Footer() {
             </div>
         </div>
       </div>
-    </footer>
+    </div>
   );
 }
 
