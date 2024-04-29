@@ -1,144 +1,83 @@
-import {
-  Facebook,
-  Instagram,
-  MailOutline,
-  Phone,
-  Pinterest,
-  Room,
-  Twitter,
-} from "@material-ui/icons";
-import styled from "styled-components";
-import { mobile } from "../responsive";
+import { CheckCircleIcon, ShieldCheckIcon, TruckIcon, PhoneArrowDownLeftIcon} from '@heroicons/react/24/outline';
 
-const Container = styled.div`
-  display: flex;
-  ${mobile({ flexDirection: "column" })}
-`;
-
-const Left = styled.div`
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-`;
-
-const Logo = styled.h1``;
-
-const Desc = styled.p`
-  margin: 20px 0px;
-`;
-
-const SocialContainer = styled.div`
-  display: flex;
-`;
-
-const SocialIcon = styled.div`
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  color: white;
-  background-color: #${(props) => props.color};
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 20px;
-`;
-
-const Center = styled.div`
-  flex: 1;
-  padding: 20px;
-  ${mobile({ display: "none" })}
-`;
-
-const Title = styled.h3`
-  margin-bottom: 30px;
-`;
-
-const List = styled.ul`
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-`;
-
-const ListItem = styled.li`
-  width: 50%;
-  margin-bottom: 10px;
-`;
-
-const Right = styled.div`
-  flex: 1;
-  padding: 20px;
-  ${mobile({ backgroundColor: "#fff8f8" })}
-
-`;
-
-const ContactItem = styled.div`
-  margin-bottom: 20px;
-  display: flex;
-  align-items: center;
-`;
-
-const Payment = styled.img`
-    width: 50%;
-`;
-
-const Footer = () => {
+function Footer() {
   return (
-    <Container>
-      <Left>
-        <Logo>LAMA.</Logo>
-        <Desc>
-          There are many variations of passages of Lorem Ipsum available, but
-          the majority have suffered alteration in some form, by injected
-          humour, or randomised words which don’t look even slightly believable.
-        </Desc>
-        <SocialContainer>
-          <SocialIcon color="3B5999">
-            <Facebook />
-          </SocialIcon>
-          <SocialIcon color="E4405F">
-            <Instagram />
-          </SocialIcon>
-          <SocialIcon color="55ACEE">
-            <Twitter />
-          </SocialIcon>
-          <SocialIcon color="E60023">
-            <Pinterest />
-          </SocialIcon>
-        </SocialContainer>
-      </Left>
-      <Center>
-        <Title>Useful Links</Title>
-        <List>
-          <ListItem>Home</ListItem>
-          <ListItem>Cart</ListItem>
-          <ListItem>Man Fashion</ListItem>
-          <ListItem>Woman Fashion</ListItem>
-          <ListItem>Accessories</ListItem>
-          <ListItem>My Account</ListItem>
-          <ListItem>Order Tracking</ListItem>
-          <ListItem>Wishlist</ListItem>
-          <ListItem>Wishlist</ListItem>
-          <ListItem>Terms</ListItem>
-        </List>
-      </Center>
-      <Right>
-        <Title>Contact</Title>
-        <ContactItem>
-          <Room style={{marginRight:"10px"}}/> 622 Dixie Path , South Tobinchester 98336
-        </ContactItem>
-        <ContactItem>
-          <Phone style={{marginRight:"10px"}}/> +1 234 56 78
-        </ContactItem>
-        <ContactItem>
-          <MailOutline style={{marginRight:"10px"}} /> contact@lama.dev
-        </ContactItem>
-        <Payment src="https://i.ibb.co/Qfvn4z6/payment.png" />
-      </Right>
-    </Container>
+    <footer className="py-12 font-custom relative">
+      <div className="container mx-auto">
+       {/* Parte superior do footer */}
+       <div className="mx-auto grid grid-cols-1 md:grid-cols-4 mb-8 bg-[#FAF3EA] w-full" style={{ height: '270px', top: '2594px', padding: '100px 0' }}>
+          {/* Ícone 1 */}
+          <div className="flex items-center">
+            <CheckCircleIcon className="h-14 w-14 mr-2 ml-20" />
+            <div>
+              <p className="font-semibold">High Quality</p>
+              <p className="text-sm">Crafted from top materials</p>
+            </div>
+          </div>
+          {/* Ícone 2 */}
+          <div className="flex items-center">
+            <ShieldCheckIcon className="h-14 w-14 mr-2 ml-7" />
+            <div>
+              <p className="font-semibold">Warranty Protection</p>
+              <p className="text-sm">Crafted from top materials</p>
+            </div>
+          </div>
+          {/* Ícone 3 */}
+          <div className="flex items-center">
+            <TruckIcon className="h-14 w-14 mr-2 ml-7 " />
+            <div>
+              <p className="font-semibold">Free Shipping</p>
+              <p className="text-sm">Crafted from top materials</p>
+            </div>
+          </div>
+          {/* Ícone 4 */}
+          <div className="flex items-center">
+            <PhoneArrowDownLeftIcon className="h-14 w-14 mr-2 ml-7" />
+            <div>
+              <p className="font-semibold">24/7 Support</p>
+              <p className="text-sm">Crafted from top materials</p>
+            </div>
+          </div>
+        </div>
+        {/* Parte inferior do footer */}
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+          {/* Seção de links */}
+          <div>
+            <ul className="list-none pl-16">
+              <li><a href="#" className="font-bold text-xl">Funiro.</a></li>
+              <h1 className='text-gray-400 pb-7'>400 University Drive Suite 200 Coral Gables, FL 33134 USA</h1>
+            </ul>
+          </div>
+          <div>
+            <ul className="list-none">
+              <h1 className='text-gray-400 pb-7'>Links</h1>
+              <li className='pb-5'><a href="#" className="pb-7">Home</a></li>
+              <li className='pb-5'><a href="#" className="pb-7">Shop</a></li>
+              <li className='pb-5'><a href="#" className="pb-7">About</a></li>
+              <li><a href="#" className="pb-7">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <ul className="list-none  pb-7">
+            <h1 className='text-gray-400 pb-7'>Help</h1>
+              <li className='pb-5'><a href="#" className="">Payment Options</a></li>
+              <li className='pb-5'><a href="#" className="">Returns</a></li>
+              <li><a href="#" className="">Privacy Policies</a></li>
+             
+            </ul>
+          </div>
+          {/* Seção de formulário de inscrição */}
+          <div className="list-none">
+          <h1 className='text-gray-400 pb-7'>NewsLetter</h1>
+          <input type="email" placeholder="Your email address" className="bg-white border-b border-black py-2 px-2 focus:outline-none" />
+           
+            <button type="submit" className=" hover:bg-blue-300  font-bold py-2 px-4  bg-white border-b border-black focus:outline-none">SUBSCRIBE</button>
+          
+            </div>
+        </div>
+      </div>
+    </footer>
   );
-};
+}
 
 export default Footer;
